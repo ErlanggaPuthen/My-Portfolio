@@ -5,7 +5,7 @@ export const heroData = {
   role: "Informatics Graduate | Data Analyst & IT Support | AI Enthusiast",
   description: "Lulusan Informatika Institut Teknologi Kalimantan dengan pengalaman praktis dalam analisis data operasional, IT support, serta pengembangan sistem berbasis AI dan mobile app. Terbiasa memproses data menggunakan Python dan SQL serta memecahkan masalah teknis secara efisien.",
   heroImage: heroImg,
-  cvLink: "/assets/CV_Muhammad Erlangga Putra Hendrawan.pdf", // Pastikan file CV ditaruh di folder public/assets/
+  cvLink: "/assets/CV_Muhammad Erlangga Putra Hendrawan.pdf",
   socials: {
     github: "https://github.com/ErlanggaPuthen",
     linkedin: "www.linkedin.com/in/erlanggaputhen", 
