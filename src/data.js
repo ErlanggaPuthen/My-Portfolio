@@ -1,10 +1,5 @@
-import HeroImage from "/assets/IMG_5572.JPG";
-
-const Image = {
-  HeroImage,
-};
-
 import heroImg from "./assets/hero-img.webp";
+
 export const heroData = {
   name: "Muhammad Erlangga Putra Hendrawan",
   role: "Informatics Graduate | Data Analyst & IT Support | AI Enthusiast",
