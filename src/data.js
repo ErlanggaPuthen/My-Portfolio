@@ -4,6 +4,20 @@ const Image = {
   HeroImage,
 };
 
+export const heroData = {
+  name: "Muhammad Erlangga Putra Hendrawan",
+  role: "Informatics Graduate | Data Analyst & IT Support | AI Enthusiast",
+  description: "Lulusan Informatika Institut Teknologi Kalimantan dengan pengalaman praktis dalam analisis data operasional, IT support, serta pengembangan sistem berbasis AI dan mobile app. Terbiasa memproses data menggunakan Python dan SQL serta memecahkan masalah teknis secara efisien.",
+  heroImage: heroImg,
+  cvLink: "/assets/CV_Muhammad Erlangga Putra Hendrawan.pdf", // Pastikan file CV ditaruh di folder public/assets/
+  socials: {
+    github: "https://github.com/ErlanggaPuthen",
+    linkedin: "www.linkedin.com/in/erlanggaputhen", 
+    email: "mailto:puthenerlangga@gmail.com",
+    whatsapp: "https://wa.me/6285349298322"
+  }
+};
+
 export default Image;
 
 import Tools1 from "/assets/tools/vscode.png";
