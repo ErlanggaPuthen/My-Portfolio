@@ -1,57 +1,27 @@
-import { useState, useEffect } from "react";
+import React from "react";
 
-const Navbar = () => {
-    const [Active, setActive] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 150) {
-                setActive(true);
-            } else {
-                setActive(false);
-            }
-        }
-
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        }
-    }, []);
-
+export default function Navbar() {
   return (
-    <div className="Navbar py-7 flex justify-between items-center">
-        <div className="logo">
-            <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
-                Portfolio
-            </h1>
+    <nav className="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80 z-50 py-4 px-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="#beranda" className="text-xl font-bold text-white tracking-wide">
+          Portfolio<span className="text-teal-400">.</span>
+        </a>
+        <div className="flex gap-6 text-sm font-medium text-slate-300">
+          <a href="#beranda" className="hover:text-teal-400 transition-colors">
+            Beranda
+          </a>
+          <a href="#tentang" className="hover:text-teal-400 transition-colors">
+            Keahlian
+          </a>
+          <a href="#proyek" className="hover:text-teal-400 transition-colors">
+            Proyek
+          </a>
+          <a href="#kontak" className="hover:text-teal-400 transition-colors">
+            Kontak
+          </a>
         </div>
-        <ul className={`menu flex items-center sm:gap-10 gap-4 md:static fixed left-1/2 -translate-x-1/2 md:-translate-x-0 md:opacity-100 
-            bg-white/30 backdrop-blur-md p-4 rounded-br-2xl rounded-bl-2xl md:bg-transparent transition-all md:transition-none ${Active ? "top-0 opacity-100" : "top-10 opacity-0"
-            }`}
-        >
-            <li>
-                <a href="#" className="sm:text-lg text-base font-medium">
-                    Beranda
-                </a>
-            </li>
-            <li>
-                <a href="#" className="sm:text-lg text-base font-medium">
-                    Tentang
-                </a>
-            </li>
-            <li>
-                <a href="#" className="sm:text-lg text-base font-medium">
-                    Proyek
-                </a>
-            </li>
-            <li>
-                <a href="#" className="sm:text-lg text-base font-medium">
-                    Kontak
-                </a>
-            </li>
-        </ul>
-    </div>
-  )
+      </div>
+    </nav>
+  );
 }
-
-export default Navbar
