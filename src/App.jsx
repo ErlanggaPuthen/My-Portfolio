@@ -1,119 +1,151 @@
-import DataImage from "./data";
-import {listTools, listProyek} from "./data";
+import React from "react";
+import Navbar from "./components/Navbar";
+import { heroData, listTools, listProyek } from "./data";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <div className="hero grid md:grid-cols-2 grid-cols-1 items-center pt-10 xl:gap-0 gap-6">
-        <div>
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
-            <img src={DataImage.HeroImage} alt="Hero Image" className="w-10 rounded-md" loading="lazy" />
-            <q>bowwwwww🔥</q>
-          </div>
-          <h1 className="text-5xl/tight font-bold mb-6">Hi, Saya Erlangga</h1>
-          <p className="text-base/loose mb-6 opacity-50">Saya mempunyai ketertarikan dalam bidang Mobile Development dan AI Engineer.
-          </p>
-          <div className="flex items-center sm:gap-4 gap-2">
-            <a href="#" className="bg-zinc-700 p-4 rounded-2xl hover:bg-violet-600">
-              Download CV <i className="ri-download-line"></i>
-            </a>
-            <a href="#" className="bg-zinc-700 p-4 rounded-2xl hover:bg-violet-600">
-              Lihat Proyek <i className="ri-arrow-down-line"></i>
-            </a>
-          </div>
-        </div>
-        <img src={DataImage.HeroImage} alt="Hero Image" className="w-[500px] md:ml-auto" loading="lazy" />
-      </div>
+    <div className="bg-slate-950 text-white min-h-screen font-sans antialiased">
+      {/* Navigasi Utama */}
+      <Navbar />
 
-      {/* tentang */}
-      <div className="tentang mt-32 py-10">
-        <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg">
-          <img src={DataImage.HeroImage} alt="Hero Image" className="w-12 rounded-md mb-10 sm:hidden" loading="lazy" />
-          <p className="text-base/loose mb-10">
-            Hi, perkenalkan saya Muhammad Erlangga Putra Hendrawan, seorang Full Stack Web Developer dan AI Engineer. Saya percaya bahwa desain dan fungsionalitas harus berjalan beriringan, sehingga setiap proyek yang saya kembangkan tidak hanya terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
-          </p>
-          <div className="flex items-center justify-between">
-            <img src={DataImage.HeroImage} alt="Hero Image" className="w-12 rounded-md sm:block hidden" loading="lazy" />
-            <div className="flex items-center gap-6">
-              <div>
-                <h1 className="text-4xl mb-1">
-                  45<span className="text-violet-500">+</span>
-                </h1>
-                <p>
-                  Proyek Selesai
-                </p>
-              </div>
-              <div>
-                <h1 className="text-4xl mb-1">
-                  4<span className="text-violet-500">+</span>
-                </h1>
-                <p>
-                  Tahun Pengalaman
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="tools mt-32">
-          <h1 className="text-4xl/snug font-bold mb-4">
-            Tools yang saya gunakan
+      {/* Section Hero */}
+      <section id="beranda" className="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+        <div className="flex-1 space-y-5 text-center md:text-left">
+          <span className="inline-block bg-slate-800 text-teal-400 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide">
+            {heroData.role}
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+            Hi, Saya <span className="text-teal-400">{heroData.name}</span>
           </h1>
-          <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50">
-            Berikut adalah beberapa tools yang sering saya gunakan dalam
-            pengembangan Mobile Apps dan pembuatan Model AI
+          <p className="text-slate-400 text-lg leading-relaxed max-w-xl">
+            {heroData.description}
           </p>
-          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+            <a
+              href="#proyek"
+              className="bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold px-6 py-3 rounded-lg transition-all shadow-lg"
+            >
+              Lihat Proyek
+            </a>
+            <a
+              href={heroData.cvLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-slate-700 hover:border-teal-400 text-slate-300 hover:text-white px-6 py-3 rounded-lg transition-all"
+            >
+              Unduh CV
+            </a>
+          </div>
+        </div>
+        <div className="w-48 h-48 md:w-80 md:h-80 relative rounded-2xl overflow-hidden border-2 border-slate-800 shadow-2xl">
+          <img
+            src={heroData.heroImage}
+            alt={heroData.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section>
 
+      {/* Section Alat & Teknologi */}
+      <section id="tentang" className="py-20 bg-slate-900/50 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold">Tools & Keahlian</h2>
+            <p className="text-slate-400 mt-2">Teknologi dan perangkat lunak yang biasa saya gunakan</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {listTools.map((tool) => (
-              <div className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group" key={tool.id}>
-                <img src={tool.gambar} alt="Tools Image" className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900" />
-                <div>
-                  <h4 className="font-bold">{tool.nama}</h4>
-                  <p className="opacity-50">{tool.ket}</p>
-                </div>
+              <div
+                key={tool.id}
+                className="bg-slate-900 border border-slate-800 hover:border-teal-500/50 p-4 rounded-xl flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
+              >
+                <img src={tool.gambar} alt={tool.nama} className="w-12 h-12 object-contain mb-3" />
+                <h3 className="font-semibold text-sm">{tool.nama}</h3>
+                <span className="text-xs text-slate-500 mt-1">{tool.ket}</span>
               </div>
             ))}
           </div>
         </div>
-      </div>
-      {/* tentang */}
+      </section>
 
-      {/* Proyek */}
-      <div className="proyek mt-32 py-10">
-        <h1 className="text-center text-4xl font-bold mb-2">Proyek</h1>
-        <p className="text-base/loose text-center opacity-50">Berikut ini beberapa proyek yang telah saya buat.</p>
-        <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+      {/* Section Proyek */}
+      <section id="proyek" className="py-20 px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold">Proyek Pilihan</h2>
+          <p className="text-slate-400 mt-2">Kumpulan hasil kerja dan aplikasi yang telah dikembangkan</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {listProyek.map((proyek) => (
-            <div key={proyek.id} className="p-4 bg-zinc-800 rounded-md">
-              <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
-              <div>
-                <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                <p className="text-base/loose mb-4">{proyek.desk}</p>
-                <div className="flex flex-wrap gap-2">
-                  {proyek.tools.map((tool, index) => (
-                    <p className="py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold" key={index}>{tool}</p>
-                  ))}
+            <div
+              key={proyek.id}
+              className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden flex flex-col hover:border-slate-700 transition-all"
+            >
+              <img src={proyek.gambar} alt={proyek.nama} className="w-full h-48 object-cover" />
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold mb-2">{proyek.nama}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{proyek.desk}</p>
                 </div>
-                <div className="mt-8 text-center">
-                  <a href="#" className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600">Lihat Website</a>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {proyek.tools.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-slate-800 text-teal-300 text-xs px-2.5 py-1 rounded-md font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-      {/* Proyek */}
+      </section>
 
-      {/* Kontak */}
-      <div className="kontak mt-32 p-10">
-        <h1 className="text-4xl font-bold mb-2">Kontak</h1>
-        <p>Mari Terhubung dengan saya.</p>
-      </div>
-      {/* Kontak */}
-    </>
-  )
+      {/* Section Kontak & Footer */}
+      <footer id="kontak" className="border-t border-slate-800 py-12 px-6 bg-slate-900/80">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-bold">Mari Terhubung</h3>
+            <p className="text-slate-400 text-sm mt-1">Terbuka untuk peluang kerja, kolaborasi, atau diskusi teknis.</p>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href={heroData.socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm transition-all"
+            >
+              GitHub
+            </a>
+            <a
+              href={heroData.socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm transition-all"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={heroData.socials.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm transition-all"
+            >
+              WhatsApp
+            </a>
+            <a
+              href={heroData.socials.email}
+              className="bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition-all"
+            >
+              Kirim Email
+            </a>
+          </div>
+        </div>
+        <div className="text-center text-slate-600 text-xs mt-12">
+          &copy; {new Date().getFullYear()} {heroData.name}. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
 }
-
-export default App
