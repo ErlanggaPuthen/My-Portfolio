@@ -1,167 +1,144 @@
-import heroImg from "./assets/hero-img.webp";
-
 export const heroData = {
   name: "Muhammad Erlangga Putra Hendrawan",
   role: "Informatics Graduate | Data Analyst & IT Support | AI Enthusiast",
   description: "Lulusan Informatika Institut Teknologi Kalimantan dengan pengalaman praktis dalam analisis data operasional, IT support, serta pengembangan sistem berbasis AI dan mobile app. Terbiasa memproses data menggunakan Python dan SQL serta memecahkan masalah teknis secara efisien.",
-  heroImage: heroImg,
-  cvLink: "/assets/CV_Muhammad Erlangga Putra Hendrawan.pdf",
+  heroImage: "/assets/hero-img.webp",
+  cvLink: "/assets/CV_Muhammad_Erlangga_Putra_Hendrawan.pdf",
   socials: {
     github: "https://github.com/ErlanggaPuthen",
-    linkedin: "www.linkedin.com/in/erlanggaputhen", 
+    linkedin: "https://www.linkedin.com/in/muhammad-erlangga-putra-hendrawan-122106379",
     email: "mailto:puthenerlangga@gmail.com",
     whatsapp: "https://wa.me/6285349298322"
   }
 };
 
-export default Image;
-
-import Tools1 from "/assets/tools/vscode.png";
-import Tools2 from "/assets/tools/reactjs.png";
-import Tools3 from "/assets/tools/nextjs.png";
-import Tools4 from "/assets/tools/tailwind.png";
-import Tools5 from "/assets/tools/bootstrap.png";
-import Tools6 from "/assets/tools/js.png";
-import Tools7 from "/assets/tools/nodejs.png";
-import Tools8 from "/assets/tools/github.png";
-import Tools9 from "/assets/tools/ai.png";
-import Tools10 from "/assets/tools/canva.png";
-import Tools11 from "/assets/tools/figma.png";
-
 export const listTools = [
   {
     id: 1,
-    gambar: Tools1,
+    gambar: "/assets/tools/vscode.png",
     nama: "Visual Studio Code",
     ket: "Code Editor",
     dad: "100",
   },
   {
     id: 2,
-    gambar: Tools2,
+    gambar: "/assets/tools/reactjs.png",
     nama: "React JS",
     ket: "Framework",
     dad: "200",
   },
   {
     id: 3,
-    gambar: Tools3,
+    gambar: "/assets/tools/nextjs.png",
     nama: "Next JS",
     ket: "Framework",
     dad: "300",
   },
   {
     id: 4,
-    gambar: Tools4,
+    gambar: "/assets/tools/tailwind.png",
     nama: "Tailwind CSS",
     ket: "Framework",
     dad: "400",
   },
   {
     id: 5,
-    gambar: Tools5,
+    gambar: "/assets/tools/bootstrap.png",
     nama: "Bootstrap",
     ket: "Framework",
     dad: "500",
   },
   {
     id: 6,
-    gambar: Tools6,
+    gambar: "/assets/tools/js.png",
     nama: "Javascript",
     ket: "Language",
     dad: "600",
   },
   {
     id: 7,
-    gambar: Tools7,
+    gambar: "/assets/tools/nodejs.png",
     nama: "Node JS",
     ket: "Javascript Runtime",
     dad: "700",
   },
   {
     id: 8,
-    gambar: Tools8,
+    gambar: "/assets/tools/github.png",
     nama: "Github",
     ket: "Repository",
     dad: "800",
   },
   {
     id: 9,
-    gambar: Tools9,
+    gambar: "/assets/tools/ai.png",
     nama: "Adobe Illustrator",
     ket: "Design App",
     dad: "900",
   },
   {
     id: 10,
-    gambar: Tools10,
+    gambar: "/assets/tools/canva.png",
     nama: "Canva",
     ket: "Design App",
     dad: "1000",
   },
   {
     id: 11,
-    gambar: Tools11,
+    gambar: "/assets/tools/figma.png",
     nama: "Figma",
     ket: "Design App",
     dad: "1100",
   },
 ];
 
-import Proyek1 from "/assets/proyek/proyek1.webp";
-import Proyek2 from "/assets/proyek/proyek2.webp";
-import Proyek3 from "/assets/proyek/proyek3.webp";
-import Proyek4 from "/assets/proyek/proyek4.webp";
-import Proyek5 from "/assets/proyek/proyek5.webp";
-import Proyek6 from "/assets/proyek/proyek6.webp";
-
 export const listProyek = [
   {
     id: 1,
-    gambar: Proyek1,
+    gambar: "/assets/proyek/proyek1.webp",
     nama: "Website Sekolah",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+    desk: "Sistem informasi profil sekolah berbasis web yang interaktif.",
     tools: ["HTML", "CSS", "Javascript", "AOS"],
     dad: "200",
   },
   {
     id: 2,
-    gambar: Proyek2,
+    gambar: "/assets/proyek/proyek2.webp",
     nama: "Company Profile",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+    desk: "Website profil perusahaan dengan galeri foto dan animasi modern.",
     tools: ["HTML", "CSS", "Javascript", "AOS", "Swiper", "Lightbox Gallery"],
     dad: "300",
   },
   {
     id: 3,
-    gambar: Proyek3,
+    gambar: "/assets/proyek/proyek3.webp",
     nama: "Web Pernikahan 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+    desk: "Undangan pernikahan digital interaktif dengan fitur konfirmasi kehadiran.",
     tools: ["Vite", "ReactJS", "TailwindCSS", "AOS"],
     dad: "400",
   },
   {
     id: 4,
-    gambar: Proyek4,
+    gambar: "/assets/proyek/proyek4.webp",
     nama: "Website Course",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+    desk: "Platform pembelajaran daring dengan katalog kursus terstruktur.",
     tools: ["Vite", "ReactJS", "Bootstrap", "AOS"],
     dad: "500",
   },
   {
     id: 5,
-    gambar: Proyek5,
+    gambar: "/assets/proyek/proyek5.webp",
     nama: "Web Portfolio",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
+    desk: "Portofolio pribadi merangkum pengalaman dan proyek yang dikerjakan.",
+    tools: ["HTML", "CSS", "Javascript", "Bootstrap"],
     dad: "600",
   },
   {
     id: 6,
-    gambar: Proyek6,
+    gambar: "/assets/proyek/proyek6.webp",
     nama: "Company Profile 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["NextJS", "TailwindCSS", "Framermotion"],
+    desk: "Pengembangan profil perusahaan generasi terbaru menggunakan Next.js.",
+    tools: ["NextJS", "TailwindCSS", "Framer Motion"],
     dad: "700",
   },
 ];
